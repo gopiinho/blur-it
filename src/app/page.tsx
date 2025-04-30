@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { MdBlurOn } from 'react-icons/md'
 import { RiImageAddFill } from 'react-icons/ri'
 
@@ -9,14 +10,15 @@ export default function Home() {
           <MdBlurOn size={50} />
           Blur It
         </h1>
-
-        <div className="group absolute bottom-10 left-1/2 flex h-60 w-60 -translate-x-1/2 cursor-pointer flex-col items-center justify-center text-white italic duration-300">
-          <div className="absolute inset-0 z-0 rounded-full bg-[#FF4F97]/90 transition-transform duration-300 group-hover:scale-120" />
-          <div className="z-10 flex flex-col items-center justify-center">
-            <RiImageAddFill size={80} />
-            <span>Add Image</span>
+        <Link href={'/editor'}>
+          <div className="group text-background absolute bottom-10 left-1/2 flex h-60 w-60 -translate-x-1/2 cursor-pointer flex-col items-center justify-center italic duration-300">
+            <div className="bg-primary/90 absolute inset-0 z-0 rounded-full transition-transform duration-300 group-hover:scale-120" />
+            <div className="z-10 flex flex-col items-center justify-center">
+              <RiImageAddFill size={80} />
+              <span>Add Image</span>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   )
